@@ -1,1 +1,1 @@
-# Web-piano
+A simple, web-based piano
