@@ -1,0 +1,41 @@
+.app {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  --app-padding: 20px;
+  --toolbar-size: 60px;
+  padding: var(--app-padding);
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &:not(.isVertical) {
+    padding-top: calc(var(--app-padding) + var(--toolbar-size));
+
+    .toolbar {
+      left: var(--app-padding);
+      top: var(--app-padding);
+      right: var(--app-padding);
+    }
+  }
+
+  &.isVertical {
+    padding-left: calc(var(--app-padding) + var(--toolbar-size));
+
+    .toolbar {
+      transform: translate(-50%, -50%) rotate(-90deg) translate(-50%, 50%);
+      left: var(--app-padding);
+      top: var(--app-padding);
+      width: calc(100 * var(--vh, 1vh) - var(--app-padding) * 2);
+    }
+  }
+}
+
+.toolbar {
+  position: absolute;
+}
+
+.piano {
+  flex: 1 1 0;
+}
